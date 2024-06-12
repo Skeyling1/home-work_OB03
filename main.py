@@ -24,8 +24,14 @@ class Animal:
         pass
 
 class Bird(Animal):
-    def __init__(self, food):
-        super().__init__(food)
+    def __init__(self, name, age, food):
+        super().__init__(self, name, age)
+        self.food = food
+
+
+
+
+
 
 
 
