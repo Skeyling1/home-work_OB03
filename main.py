@@ -25,7 +25,7 @@ class Animal:
 
 class Bird(Animal):
     def __init__(self, name, age, food):
-        super().__init__(self, name, age)
+        super().__init__(name, age)
         self.food = food
 
 
