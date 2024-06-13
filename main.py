@@ -42,7 +42,7 @@ class Reptile(Animal):
 # 3. Продемонстрируйте полиморфизм: создайте функцию `animal_sound(animals)`, которая принимает список животных и
 # вызывает метод `make_sound()` для каждого животного.
 
-animals = [Reptile("Snake", 10, "mise"), Mammal("Sheep", 1, "grass"), Bird("Crow", 105, "porridge")]
+animals = [Reptile("Snake", 10, "mice"), Mammal("Sheep", 1, "grass"), Bird("Crow", 105, "porridge")]
 
 def animal_sound(animals):
     for i in animals:
@@ -50,22 +50,45 @@ def animal_sound(animals):
 
 animal_sound(animals)
 
-
-# 4. Используйте композицию для создания класса `Zoo`, который будет содержать информацию о животных и сотрудниках.
+class Zoo:
+    def __init__(self):
+        self.animals = animals
+        self.employee = employee
+    def add_employee(self, new_employee):
+        employee.append(new_employee)
+    def add_animal(self, new_animal):
+        animals.append(new_animal)
 # Должны быть методы для добавления животных и сотрудников в зоопарк.
 
-class Zoo:
-    pass
-
-
-# 5. Создайте классы для сотрудников, например, `ZooKeeper`, `Veterinarian`, которые могут иметь специфические методы
-# (например, `feed_animal()` для `ZooKeeper` и `heal_animal()` для `Veterinarian`).
 
 class ZooKeeper:
-    pass# (например, `feed_animal()` для `ZooKeeper`
+    def __init__(self, name):
+        self.name = name
+    def feed_animal(self, which_animal):
+        print(animals[which_animal].name, "was fed by", self.name, "with", animals[which_animal].food)
 
 class Veterinarian:
-    pass # `heal_animal()` для `Veterinarian`).
+    def __init__(self, name):
+        self.name = name
+    def heal_animal(self, which_animal):
+        print(animals[which_animal].name, "was healed by", self.name)
+
+employee = [Veterinarian("Joane"), ZooKeeper("Alex")]
+
+print("")
+employee[1].feed_animal(1)
+employee[0].heal_animal(2)
+employee[1].feed_animal(0)
+
+print("\na new person and a new animal were added, let's see what they do:")
+new_emp = ZooKeeper("Barbara")
+new_anim = Bird("Pigeon", 2, "sunflower grains")
+
+Z1 = Zoo()
+Z1.add_animal(new_anim)
+Z1.add_employee(new_emp)
+
+employee[2].feed_animal(3)
 
 
 # Дополнительно:
