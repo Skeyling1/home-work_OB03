@@ -93,7 +93,7 @@ employee[2].feed_animal(3)
 
 with open('our_zoo.txt', 'r') as file:
     for line in file:
-        data = line.strip().split()
+        data = line.strip("\n").split()
         wht_clss = data[0]
         name = data[1]
         if wht_clss == "Veterinarian":
@@ -114,7 +114,7 @@ with open('our_zoo.txt', 'w') as file:
             t = "Veterinarian"
         elif t == "<class '__main__.ZooKeeper'>":
             t = "ZooKeeper"
-        file.write(t + " " + f + " ")
+        file.write(t + " " + f + "\n")
 
 
 
