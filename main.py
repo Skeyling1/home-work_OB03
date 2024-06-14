@@ -99,7 +99,7 @@ with open('our_zoo.txt', 'r') as file:
         if wht_clss == "Veterinarian":
             nnemp = Veterinarian(name)
             Z1.add_employee(nnemp)
-        elif ht_clss == "ZooKeeper":
+        elif wht_clss == "ZooKeeper":
             nnemp = ZooKeeper(name)
             Z1.add_employee(nnemp)
 
