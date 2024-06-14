@@ -39,8 +39,15 @@ class Reptile(Animal):
     def eat(self):
         print(f"{self.name} eat {self.food}")
 
-# 3. Продемонстрируйте полиморфизм: создайте функцию `animal_sound(animals)`, которая принимает список животных и
-# вызывает метод `make_sound()` для каждого животного.
+class Zoo:
+    def __init__(self):
+        self.animals = animals
+        self.employee = employee
+    def add_employee(self, new_employee):
+        employee.append(new_employee)
+    def add_animal(self, new_animal):
+        animals.append(new_animal)
+
 
 animals = [Reptile("Snake", 10, "mice"), Mammal("Sheep", 1, "grass"), Bird("Crow", 105, "porridge")]
 
@@ -50,15 +57,7 @@ def animal_sound(animals):
 
 animal_sound(animals)
 
-class Zoo:
-    def __init__(self):
-        self.animals = animals
-        self.employee = employee
-    def add_employee(self, new_employee):
-        employee.append(new_employee)
-    def add_animal(self, new_animal):
-        animals.append(new_animal)
-# Должны быть методы для добавления животных и сотрудников в зоопарк.
+
 
 
 class ZooKeeper:
