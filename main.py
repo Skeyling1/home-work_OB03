@@ -91,19 +91,35 @@ employee[2].feed_animal(3)
 # Попробуйте добавить дополнительные функции в вашу программу, такие как сохранение информации о зоопарке в файл
 # и возможность её загрузки, чтобы у вашего зоопарка было "постоянное состояние" между запусками программы.
 
+with open('our_zoo.txt', 'r') as file:
+    for line in file:
+        data = line.strip().split()
+        wht_clss = data[0]
+        name = data[1]
+        if wht_clss == "Veterinarian":
+            nnemp = Veterinarian(name)
+            Z1.add_employee(nnemp)
+        elif ht_clss == "ZooKeeper":
+            nnemp = ZooKeeper(name)
+            Z1.add_employee(nnemp)
+
+
+
 
 with open('our_zoo.txt', 'w') as file:
     for i in range(len(employee)):
         t = str(type(employee[i]))
         f = employee[i].name
-        file.write(t + "\n")
-        file.write(f + "\n")
+        if t == "<class '__main__.Veterinarian'>":
+            t = "Veterinarian"
+        elif t == "<class '__main__.ZooKeeper'>":
+            t = "ZooKeeper"
+        file.write(t + " " + f + " ")
 
-with open('our_zoo.txt', 'r') as file:
-    print(file.read())
-    for line in file.read():
-        print(line)
-        #if line == "<class '__main__.Veterinarian'>":
+
+
+
+
 
 
 

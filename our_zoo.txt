@@ -1,6 +1,1 @@
-<class '__main__.Veterinarian'>
-Joane
-<class '__main__.ZooKeeper'>
-Alex
-<class '__main__.ZooKeeper'>
-Barbara
+Veterinarian Joane ZooKeeper Alex ZooKeeper Barbara Veterinarian Joane 
