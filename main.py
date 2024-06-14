@@ -48,18 +48,6 @@ class Zoo:
     def add_animal(self, new_animal):
         animals.append(new_animal)
 
-
-animals = [Reptile("Snake", 10, "mice"), Mammal("Sheep", 1, "grass"), Bird("Crow", 105, "porridge")]
-
-def animal_sound(animals):
-    for i in animals:
-        i.make_sound()
-
-animal_sound(animals)
-
-
-
-
 class ZooKeeper:
     def __init__(self, name):
         self.name = name
@@ -71,6 +59,14 @@ class Veterinarian:
         self.name = name
     def heal_animal(self, which_animal):
         print(animals[which_animal].name, "was healed by", self.name)
+
+animals = [Reptile("Snake", 10, "mice"), Mammal("Sheep", 1, "grass"), Bird("Crow", 105, "porridge")]
+
+def animal_sound(animals):
+    for i in animals:
+        i.make_sound()
+
+animal_sound(animals)
 
 employee = [Veterinarian("Joane"), ZooKeeper("Alex")]
 
@@ -94,11 +90,21 @@ employee[2].feed_animal(3)
 # Дополнительно:
 # Попробуйте добавить дополнительные функции в вашу программу, такие как сохранение информации о зоопарке в файл
 # и возможность её загрузки, чтобы у вашего зоопарка было "постоянное состояние" между запусками программы.
-file = open('our_zoo.txt', 'w')
-for i in range(len(employee)):
-    f = employee[i].name
-    file.write(f + "\n")
-for i in range(len(animals)):
-    f = animals[i].name
-    file.write(f + "\n")
-file.close()
+
+with open("our_zoo.txt", 'w') as file:
+    file.write(str(employee))
+    #file.write(str(animals))
+
+with open("our_zoo.txt", 'w') as file:
+    employee2 = [file.read(employee)]
+
+employee2
+
+# file = open('our_zoo.txt', 'w')
+# for i in range(len(employee)):
+#     f = employee[i].name
+#     file.write(f + "\n")
+# for i in range(len(animals)):
+#     f = animals[i].name
+#     file.write(f + "\n")
+# file.close()
