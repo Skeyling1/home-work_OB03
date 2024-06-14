@@ -75,6 +75,7 @@ class Veterinarian:
 
 employee = [Veterinarian("Joane"), ZooKeeper("Alex")]
 
+
 print("")
 employee[1].feed_animal(1)
 employee[0].heal_animal(2)
@@ -94,6 +95,11 @@ employee[2].feed_animal(3)
 # Дополнительно:
 # Попробуйте добавить дополнительные функции в вашу программу, такие как сохранение информации о зоопарке в файл
 # и возможность её загрузки, чтобы у вашего зоопарка было "постоянное состояние" между запусками программы.
-file = open('our_zoo.txt', 'r+')
-file.write("")
+file = open('our_zoo.txt', 'w')
+for i in range(len(employee)):
+    f = employee[i].name
+    file.write(f + "\n")
+for i in range(len(animals)):
+    f = animals[i].name
+    file.write(f + "\n")
 file.close()
