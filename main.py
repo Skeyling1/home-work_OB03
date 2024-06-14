@@ -100,10 +100,13 @@ with open('our_zoo.txt', 'w') as file:
         file.write(f + "\n")
 
 with open('our_zoo.txt', 'r') as file:
-    for line in file:
-        if line == "<class '__main__.Veterinarian'>\n":
-            print(f"{+1}добавляем в класс ветеринаров")
-        else: print(line)
+    print(file.read())
+    for line in file.read():
+        print(line)
+        #if line == "<class '__main__.Veterinarian'>":
+
+
+
 
 
 
